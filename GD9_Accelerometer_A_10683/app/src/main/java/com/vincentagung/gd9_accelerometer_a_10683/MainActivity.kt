@@ -19,12 +19,12 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
 
         // Keeps phone in light mode
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-        square = findViewById(R.id.tv_square)
+        setContentView(R.layout.activity_main)
 
+        square = findViewById(R.id.tv_square)
 
         sensorManager = getSystemService(SENSOR_SERVICE) as SensorManager
         // Specify the sensor you want to listen to
@@ -37,6 +37,7 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
             )
         }
     }
+
 
     override fun onSensorChanged(event: SensorEvent?) {
         // Checks for the sensor we have registered
